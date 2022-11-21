@@ -19,6 +19,10 @@ class MainWindow(QMainWindow):
         coffee.varietyID = variety.ID AND coffee.degreeID = degree.ID AND
         coffee.makingID = making.ID ORDER BY coffee.ID ASC"""
         self.model.setQuery(self.db.exec(req))
+        self.TITLES = ['ИД', 'сорт', 'степень обжарки', 'название напитка', 'хранение',
+                       'вкус', 'цена за 1 упаковку (в рублях)', 'объём 1 упаковки (в мл)']
+        for i in range(len(self.TITLES)):
+            self.model.setHeaderData(i, Qt.Orientation.Horizontal, self.TITLES[i])
         self.view.setModel(self.model)
         self.widget = QWidget()
         self.setCentralWidget(self.widget)

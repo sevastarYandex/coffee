@@ -16,3 +16,4 @@ pywin32-ctypes==0.2.0
 qtgui==0.0.1
 setuptools==63.2.0
 sqlite3py==2.0.5
+
